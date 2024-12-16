@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón Épico con Cuenta Regresiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1e1e1e;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #countdown {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .epic-btn {
+            position: relative;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            color: #fff;
+            background: #555;
+            border: none;
+            border-radius: 5px;
+            cursor: not-allowed;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .epic-btn.active {
+            cursor: pointer;
+            opacity: 1;
+            background: linear-gradient(90deg, #ff5722, #ff9800);
+            box-shadow: 0 0 20px 5px rgba(255, 87, 34, 0.7);
+        }
+
+        .epic-btn.active:hover {
+            transform: scale(1.1);
+        }
+
+        .epic-btn::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: radial-gradient(circle, rgba(255, 87, 34, 0.5), rgba(0, 0, 0, 0));
+            z-index: -1;
+            border-radius: 10px;
+            animation: fireEffect 1.5s infinite;
+            opacity: 0;
+        }
+
+        .epic-btn.active::before {
+            opacity: 1;
+        }
+
+        @keyframes fireEffect {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>¡La gloria te espera!</h1>
+    <div id="countdown">Cuenta regresiva: 10</div>
+    <button id="epicButton" class="epic-btn" disabled>¡ENTRA EN LA ARENA!</button>
+
+    <script>
+        // Configuración de la cuenta regresiva
+        let countdownTime = 10; // Tiempo en segundos
+        const countdownDisplay = document.getElementById('countdown');
+        const epicButton = document.getElementById('epicButton');
+
+        // Función de la cuenta regresiva
+        const countdown = setInterval(() => {
+            countdownTime--;
+            countdownDisplay.textContent = `Cuenta regresiva: ${countdownTime}`;
+
+            if (countdownTime <= 0) {
+                clearInterval(countdown);
+                activateButton();
+            }
+        }, 1000);
+
+        // Función para activar el botón
+        function activateButton() {
+            epicButton.disabled = false;
+            epicButton.classList.add('active');
+            epicButton.textContent = '¡AHORA PUEDES ENTRAR!';
+        }
+    </script>
+</body>
+</html>

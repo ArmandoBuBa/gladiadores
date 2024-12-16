@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'Wallpoet';
+    src: url('font/Wallpoet-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+   
+}
+@font-face {
+    font-family: 'Tourney';
+    src: url('font/Tourney-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('font/PressStart2P-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+   
+}
+button{
+    background-color: black;  
+    border-radius: 10px; 
+    width: 100px; 
+    height: 40px;
+    border: solid 1px whitesmoke ;
+}
+p{
+   background: linear-gradient(yellow,red);
+  -webkit-background-clip: text;
+  color: transparent;  
+  font-size: 20px;
+}
+
+.red-bg{
+    background :red
+}
+.blue{
+    background :blue
+}
+
+img {
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    display: block; /* Esto evitará que los espacios en blanco se agreguen debajo de la imagen */
+  }
+
+  h1, #countdown {
+    font-size: 2em;
+    background: linear-gradient(90deg, #ffd700, #f9a602, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    margin: 10px 0;
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    display: block; /* Esto evitará que los espacios en blanco se agreguen debajo de la imagen */
+}
+
+#countdown {
+    font-size: 2.3em;
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    display: block; /* Esto evitará que los espacios en blanco se agreguen debajo de la imagen */
+    margin-top: calc(10% + 10px); /* Margen superior adaptable */
+}
+
+.epic-btn {
+    position: relative;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    color: #fff;
+    background: #555;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    display: block; /* Esto evitará que los espacios en blanco se agreguen debajo de la imagen */
+}
+
+.epic-btn.active {
+    cursor: pointer;
+    opacity: 1;
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+    box-shadow: 0 0 20px 5px rgba(255, 87, 34, 0.7);
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    display: block; /* Esto evitará que los espacios en blanco se agreguen debajo de la imagen */
+}
+
+.epic-btn.active:hover {
+    transform: scale(1.1);
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    display: block; /* Esto evitará que los espacios en blanco se agreguen debajo de la imagen */
+}
+
+.epic-btn::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, rgba(255, 87, 34, 0.5), rgba(0, 0, 0, 0));
+    z-index: -1;
+    border-radius: 10px;
+    animation: fireEffect 1.5s infinite;
+    opacity: 0;
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    display: block; /* Esto evitará que los espacios en blanco se agreguen debajo de la imagen */
+}
+
+.epic-btn.active::before {
+    opacity: 1;
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    display: block; /* Esto evitará que los espacios en blanco se agreguen debajo de la imagen */
+}
+
+@keyframes fireEffect {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+

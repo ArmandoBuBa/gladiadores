@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/inicio.css">
+    <title>Gladiador</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="music/pista.mp3" type="audio/mpeg">
+    </audio>
+    <header>
+        <div class="overlay">
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="videos/loop chispas.mp4" type="video/mp4">
+            </video>
+        </div>
+        <nav class="navbar navbar-expand-lg " style=" background-color: rgba(0, 0, 0, 0.8) !important;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="mark1.html"><img src="img/Gladiador_ll-removebg-preview.png" style="height: 60px; height: 60px;" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"  style="background: linear-gradient(to right, #66431D, #DBBD62); border: none;">
+                    <p style="margin-top: 5px; color: black; font-family: fantasy;">Menu</p>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://forms.gle/GFt8SJZehdwhUdgHA"><p>🏆Unete al Reto🏆</p></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><p>Nuestro legado</p></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://emlider.com/"><p>Emlider</p></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto" style="margin-top: 0px;">
+                   <div class="card" style="background-color: #00FF0000; border-color: #00FF0000;">
+                      <div class="card-body text-center"> 
+                        <img src= "img/Gladiator Dorado-Photoroom.png">
+                        <div id="countdown" style="margin-top: -80px;"><span id="time">Cargando...</span></div>
+                        <a id="epicButton" class="epic-btn" style="text-decoration: none; margin-top: 20px;" href="https://forms.gle/GFt8SJZehdwhUdgHA">¡ENTRA EN LA ARENA!</a>
+                       <script>
+                           // Configuración de la fecha objetivo
+                         const targetDate = new Date("2024-12-25T00:00:00").getTime(); // Cambia esta fecha
+                         const countdownDisplay = document.getElementById('countdown');
+                         const timeDisplay = document.getElementById('time');
+                         const epicButton = document.getElementById('epicButton');
+    
+                          // Función de la cuenta regresiva
+                          const countdown = setInterval(() => {
+                          const now = new Date().getTime();
+                          const timeLeft = targetDate - now;
+    
+                          // Calcular días, horas, minutos y segundos restantes
+                          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                          const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+                           // Mostrar la cuenta regresiva
+                          timeDisplay.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    
+                           // Activar el botón cuando el tiempo llegue a cero
+                           if (timeLeft <= 0) {
+                              clearInterval(countdown);
+                              timeDisplay.textContent = "¡Es hora!";
+                              activateButton();
+                            }
+                         }, 1000);
+    
+                            // Función para activar el botón
+                           function activateButton() {
+                              epicButton.disabled = false;
+                              epicButton.classList.add('active');
+                              epicButton.textContent = '¡AHORA PUEDES ENTRAR!';
+                            }
+                         </script>
+        
+                    </div>
+                 </div>
+                </div>
+            </div>
+        </div>
+       
+    </header>
+    
+    <!-- Contenido Principal -->
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

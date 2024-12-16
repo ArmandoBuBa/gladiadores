@@ -1,0 +1,59 @@
+/* Estilo del botón */
+.btn-epic {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #f39c12;
+    color: white;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto de animación de desbordamiento */
+.btn-epic::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #e67e22;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+}
+
+/* Al pasar el mouse sobre el botón */
+.btn-epic:hover {
+    color: #fff;
+    background-color: #e67e22;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de expansión al pasar el mouse */
+.btn-epic:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+h1{
+    font-size: 2em;
+    background: linear-gradient(90deg, #ffd700, #f9a602, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    display: block; /* Esto evitará que los espacios en blanco se agreguen debajo de la imagen */
+}
+
